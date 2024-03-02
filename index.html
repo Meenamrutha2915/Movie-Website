@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel = "stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Book my show</title>
+  </head>
+   <body>
+        
+   <section>     
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary wrapper">
+            <div class="container-fluid">
+                <h2><b>Book My Show</b></h2>
+                
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link  active trending-movies"aria-current="page" href="#">Trending Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active tv-Shows" aria-current="page" href="#">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active upcoming-movies"  aria-current="page" href="#">Upcoming Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active comedy-movies" aria-current="page" href="#">Comedy Movies</a>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>-->
+                    <!--<li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>-->
+                </ul>
+                <form class="d-flex" role="search">
+                 <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="addon-wrapping" id = "search-input">
+                
+                  <button  type = "submit" class="btn btn-danger" id = "sign-in">Search</button>
+                </form>
+              </div>
+            </div>
+           
+          </nav>
+          <div class = "card-container" id = "movie-cards">
+
+          </div>
+
+         
+
+        <!--Signin Form-->
+
+        <section class = "homepage ">
+        <div class = "form_container ">
+
+                <div class="align-items-center h-100 gradient-custom-3 signin-form hide">
+            
+                    <div class="container h-100 ">
+                        <form id = "signinForm">
+                           <div class="row d-flex justify-content-center align-items-center h-100">
+                                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                                    <div class="card" style="border-radius: 15px;">
+            
+                                        <div class="card-body p-5">
+            
+                                                <h2 class="text-uppercase text-center mb-5">Sign in</h2>
+                                        
+                                                    <div class="form-outline mb-4" >
+                                                        <label class="form-label" for="exampleInputEmail1">Email address</label>
+                                                        <input type="email"  id="email" class="form-control form-control-lg"  />
+            
+                                                    </div>
+                                        
+                                                    <div class="form-outline mb-4">
+                                                        <label class="form-label" for="inputPassword">Password</label>
+                                                        <input type="password" id="psw" class="form-control form-control-lg" />
+                                                    
+                                                    </div>
+                                        
+                                        
+                                                    <div class="d-flex justify-content-center">
+                                                        <button type="submit" class="btn btn-primary" id = "sign-in">Sign in</button>
+                                                    </div>
+                                        
+                                                    <div class = "d-flex justify-content-center">
+                                                        Don't have an account ?<a href = "#" id = "signup">Sign up</a>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                                
+                </div>
+            
+
+         <!--Signup Form-->
+          
+    <div class="align-items-center h-100 gradient-custom-3 signup-form hide">
+            
+        <div class="container h-100 ">
+            <form id = "signupForm">
+               <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+
+                            <div class="card-body p-5">
+
+                                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                            
+                                        <div class="form-outline mb-4" >
+                                            <label class="form-label" for="username">username</label>
+                                            <input type="text" id="username" class="form-control form-control-lg"  />
+
+                                        </div>
+                            
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="regemail">Email</label>
+                                            <input type="email" id="regemail" class="form-control form-control-lg" />
+                                        
+                                        </div>
+                            
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="regpassword">Password</label>
+                                            <input type="password" id="regpassword" class="form-control form-control-lg" />
+                                        
+                                        </div>
+                            
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="confirmpsw" >confirm password</label>
+                                            <input type="password" id="confirmpsw" class="form-control form-control-lg" />
+                                        
+                                        </div>
+                            
+                                        <div class="form-check d-flex justify-content-center mb-5">
+                                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                                            <label class="form-check-label" for="form2Example3g">
+                                                I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                            </label>
+                                        </div>
+                            
+                                        <div class="d-flex justify-content-center">
+                                            <button type="button" class="btn btn-primary" id = "signup-form-button">Sign up</button>
+                                        </div>
+                            
+                                        <p class="text-center text-muted mt-5 mb-0  login_signup">Have already an account? 
+                                            <a href="#!"class="fw-bold text-body" id = "login"><u>Sign in</u></a>
+                                        </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+                    
+    </div>
+
+    <div id="movie-results"> </div>
+     
+</section>
+    
+  
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>   
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script> 
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXkQ03UG8L40LivC5DOOeUitke_ZYHKcE",
+            authDomain: "movie-details-3823c.firebaseapp.com",
+            projectId: "movie-details-3823c",
+            storageBucket: "movie-details-3823c.appspot.com",
+            messagingSenderId: "202593290045",
+            appId: "1:202593290045:web:baa93eef130d35540fa754",
+            measurementId: "G-X591SGH3TQ"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+         
+    <script  src="app.js"></script>
+    <script  src="app2.js"></script>
+    </body>
+ </html>
