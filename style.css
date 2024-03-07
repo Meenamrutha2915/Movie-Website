@@ -6,7 +6,11 @@ body {
     color: white;
     font-family: "microsoft yahei", arial, -apple-system, BlinkMacSystemFont,
       "segoe ui", roboto, oxygen, cantarell, "helvetica neue", ubuntu, sans-serif;
-    background: #080823;
+    background-image: url("https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+
   }
 
 .search{
@@ -33,3 +37,179 @@ body {
     width :calc(25% - 20px);
     margin : 10px;
   } */
+
+  .wrapper .card {
+    position: relative;
+    font-size: 14px;
+    line-height: 21px;
+    width: 285px;
+    height: 360px;
+    overflow: hidden;
+    transition: 0.5s ease all;
+  }
+
+  .wrapper .card:hover {
+    cursor: pointer;
+  }
+  .card-title{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;  
+    color: #000;
+    }
+
+  footer{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      color: whitesmoke;
+  }
+  footer div{
+    margin: 0 10px;
+    font-size: 15px;
+}
+footer div ul{
+  display: flex;
+  flex-wrap: nowrap;
+ 
+}
+footer div ul li{
+  display: flex;
+  flex-wrap: nowrap;
+}
+footer div ul li a{
+  text-decoration: none;
+  width: 100%;
+  color: whitesmoke;
+  margin: 0.5em;
+  font-size: larger;
+}
+h1{
+  font-family: 'Audiowide', cursive;
+  font-size: 2rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  margin-left: 10px;
+  color:antiquewhite;
+  animation-name: slideInFromLeft;
+  animation-duration: 5s;
+  animation-iteration-count: 2;
+}
+.card-title{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;  
+  color: #000;
+  }
+  .col-lg-3{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      background:gold; 
+      font-family: 'Audiowide', cursive;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+    }
+
+  .col-lg-3 img {
+      height: 250px;
+      width: 180px;
+      border-radius: 5px;
+      border: 1px solid
+   }
+  
+   .results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+
+   .movie {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    background:burlywood;
+    color:#000;
+    font-family: 'Audiowide', cursive;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .movie img {
+    height: 250px;
+    width: 180px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.nav-button .btn{
+  width: 130px;
+  height: 40px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.btn {
+  color: var(--white);
+  font-size: var(--fs-11);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 30px;
+  border: 2px solid var(--citrine);
+  border-radius: 50px;
+  transition: var(--transition-1);
+}
+
+.btn > ion-icon { font-size: 18px; }
+
+.btn-primary { background: var(--rich-black-fogra-29); }
+
+.btn-primary:is(:hover, :focus) {
+  background: var(--citrine);
+  color: var(--xiketic);
+}
+
+.btn-Success:is(:hover, :focus) {
+  background: var(--citrine);
+  color: var(--xiketic);
+}
+.submit{
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+.submit:hover{
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}

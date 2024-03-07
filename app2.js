@@ -14,9 +14,9 @@ async function trendingMovies(){
 
         const filterMovies = trendingmovies.filter(movie =>{
             //filter condition
-           return movie.vote_count > 2000;
+           return movie.vote_count > 1000;
         });
-    
+        const innerhtml = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
         const html = filterMovies.map(movie =>
            `<div class="card" style="width: 18rem;">
                 <img src="${IMG_PATH + movie.poster_path}" class="card-img-top" alt="...">
@@ -28,9 +28,10 @@ async function trendingMovies(){
                     <p class ="card-text">${movie.popularity}</p>
                </div>
             </div>`
-           );
-
-        movieResults.innerHTML = html;
+           ).join();
+        const outerhtml = `</div>`;
+        console.log(html);
+        movieResults.innerHTML = innerhtml + html + outerhtml;
     } catch(error) {
         console.log("error ", error);
     }
@@ -59,22 +60,26 @@ async function popularTVShows() {
         console.log("tvshowsdata",tvshowsdata);
         const tvShows = tvshowsdata.results;
         
-        const html = tvShows.reduce((accumulator,show) =>{
-            const tvShowhtml = `<div class="card" style="width: 18rem;">
-                                <img src="${IMG_PATH + show.poster_path}" class="card-img-top" alt="...">
+        const innerhtml = `<div class="row row-cols-1 row-cols-md-4 g-4">`;
+        let  html = tvShows.reduce((accumulator,show) =>{
+            const tvShowhtml =  
+                            `<div class="col">
+                                <div class="card">
+                                <img src="${IMG_PATH + show.poster_path}"class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">${show.original_name}</h5>
+                                    <h5 class="card-title">${show.title}</h5>
                                     <p class="card-text">${show.overview}</p>
                                     <p class="card-text">${show.vote_count}</p>
-                                    <p class ="card-text">${show.first_air_date}</p>
+                                    <p class ="card-text">${show.release_date}</p>
                                     <p class ="card-text">${show.popularity}</p>
                                 </div>
-                            </div>`;
+                                </div>
+                            </div>`
                         return accumulator + tvShowhtml;
               }, '');
+        const outerhtml = `</div>`
         
-        
-                   movieResults.innerHTML = html;
+                   movieResults.innerHTML = innerhtml + html + outerhtml;
         }
     
     catch (error) {
@@ -92,7 +97,7 @@ upcomingMoviesLink.addEventListener('click',() =>{
 
 async function  upcomingMovies() {
 
-    try{
+    try {
 
         const options = {
             method: 'GET',
@@ -108,27 +113,34 @@ async function  upcomingMovies() {
         const upcomingMoviesfinal = upcomingMoviesdata.results;
 
         let html = '';
+
+        html += `<div class="row row-cols-1 row-cols-md-4 g-4">`;
+
         for(const movie of upcomingMoviesfinal){
-
-                html += `<div class="card" style="width: 18rem;">
-                            <img src="${IMG_PATH + movie.poster_path}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">${movie.original_title}</h5>
-                                    <p class="card-text">${movie.overview}</p>
-                                    <p class="card-text">${movie.vote_count}</p>
-                                    <p class ="card-text">${movie.release_date}</p>
-                                    <p class ="card-text">${movie.popularity}</p>
-                                </div>
-                        </div>`;
-                 }
-          
-           movieResults.innerHTML = html;
-
-       } catch (error) {
-        console.log("error ", error);
-       }
-
+            html += 
+             `<div class="col">
+                <div class="card">
+                <img src="${IMG_PATH + movie.poster_path}"class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${movie.title}</h5>
+                    <p class="card-text">${movie.overview}</p>
+                    <p class="card-text">${movie.vote_count}</p>
+                    <p class ="card-text">${movie.release_date}</p>
+                    <p class ="card-text">${movie.popularity}</p>
+                </div>
+                </div>
+            </div>`
     }
+
+    html += `</div>`;
+
+        movieResults.innerHTML = html;
+
+    } catch (error) {
+        console.log("error ", error);
+    }
+
+}
 
 
 
@@ -157,6 +169,7 @@ async function comedyMoviesSearch(){
     }
 
     let html = '';
+    html +=  `<div class="row row-cols-1 row-cols-md-3 g-4">`;
 
     for (const movie of comedyMovies) {
         html += 
@@ -170,7 +183,8 @@ async function comedyMoviesSearch(){
             </div>
         </div>`;
     }
-
+    
+    html += `</div>`;
     movieResults.innerHTML = html;
 
 }
