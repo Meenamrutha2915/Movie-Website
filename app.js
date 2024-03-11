@@ -12,6 +12,7 @@ const TVShowsLink = document.querySelector(".tv-Shows");
 const upcomingMoviesLink = document.querySelector(".upcoming-movies");
 const movieResults = document.getElementById("movie-results");
 
+
 const popularMoviesURL = "https://api.themoviedb.org/3/movie/popular?api_key=f06eba9f85f8ec39b59e5c3422e18617";
 document.addEventListener('DOMContentLoaded' ,() =>{
     popularMovies();
